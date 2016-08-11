@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/**
+ * 
+ * @authors 忽如寄 (594613537@qq.com)
+ * @date    2016-08-11 19:18:04
+ * @version v1.0
+ */
+
+/*css reset start*/
+* {
+	margin: 0;
+	padding: 0;
+}
+ul, li {
+	list-style: none;
+}
+
+/*css reset end*/
+
+/*github展示统一样式start*/
+a {
+	text-decoration: none;
+	color: #fff;
+}
+body {
+	padding-top: 10px;
+	background: #51B1D9;
+	font: Helvetica, Arial, sans-serif;
+}
+.github {
+	width: 200px;
+	text-align: center;
+	height: 60px;
+	line-height: 60px;
+	font-size: 24px;
+	color: #fff;
+	border: 1px solid;
+	border-color: rgba(255, 255, 255, 0.5);
+	margin: 0 auto;
+	cursor: pointer;
+	margin-bottom: 10px;
+}
+.github:hover {
+	background: #29599B;
+}
+.github a {
+	color: #fff;
+	text-decoration: none;
+}
+
+/*github展示统一样式end*/
+
+/*css public start*/
+.floatfix {
+	*zoom: 1;
+}
+.floatfix:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+/*css public end*/
+
+/*slider start*/
+.slider-contaner {
+	width: 100%;
+	position: relative;
+}
+.slider-item + .slider-item {
+	opacity: 0;
+}
+.slider-item {
+	width: 100%;
+	position: absolute;
+	animation-timing-function: linear;
+	animation-name: fade;
+	animation-iteration-count: infinite;
+	background-size: 100%;
+}
+.focus-container {
+	position: absolute;
+	z-index: 7;
+	margin: 0 auto;
+	left: 0;
+	right: 0;
+}
+.focus-container li {
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	float: left;
+	margin-right: 10px;
+	background: #fff;
+}
+.focus-item {
+	width: 100%;
+	height: 100%;
+	border-radius: inherit;
+	animation-timing-function: linear;
+	animation-name: fade;
+	animation-iteration-count: infinite;
+}
+.focus-item2, .focus-item3, .focus-item4, .focus-item5 {
+	opacity: 0;
+}
+.focus-container ul {
+	margin-left: 46%;
+}
+
+/*设置轮播焦点的位置*/
+.focus-container {
+	bottom: 2%;
+}
+
+/*设置当前图片焦点的颜色*/
+.focus-item {
+	background: #51B1D9;
+}
+
+/*设置动画，请根据实际需要修改秒数*/
+.slider-item, .focus-item {
+	animation-duration: 20s;
+}
+.slider-item1, .focus-item1 {
+	animation-delay: -1s;
+}
+.slider-item2, .focus-item2 {
+	animation-delay: 3s;
+}
+.slider-item3, .focus-item3 {
+	animation-delay: 7s;
+}
+.slider-item4, .focus-item4 {
+	animation-delay: 11s;
+}
+.slider-item5, .focus-item5 {
+	animation-delay: 15s;
+}
+@keyframes fade {
+	0% {
+		opacity: 0;
+		z-index: 2;
+	}
+	5% {
+		opacity: 1;
+		z-index: 1;
+	}
+	20% {
+		opacity: 1;
+		z-index: 1;
+	}
+	25% {
+		opacity: 0;
+		z-index: 0;
+	}
+	100% {
+		opacity: 0;
+		z-index: 0;
+	}
+}
+
+/*设置背景，响应式请利用媒体查询根据断点修改路径*/
+.slider-item1 {
+	background-image: url(imgs/1.jpg);
+}
+.slider-item2 {
+	background-image: url(imgs/2.jpg);
+}
+.slider-item3 {
+	background-image: url(imgs/3.jpg);
+}
+.slider-item4 {
+	background-image: url(imgs/4.jpg);
+}
+.slider-item5 {
+	background-image: url(imgs/5.jpg);
+}
+
+/*设置图片的高度，请根据具体需要修改百分比，响应式及时修改此值*/
+.slider, .slider-item {
+	padding-bottom: 40%;
+}
